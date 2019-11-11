@@ -1,0 +1,308 @@
+{% load static xytags %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Home</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'myuniversity/style.css' %}">
+
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="container">
+    <div class="header-wrap d-none d-md-block">
+        <div class="row">
+
+            <!-- Left header box -->
+            <header class="col-6 text-left">
+                <h1><span>Universitys</span></h1>
+            </header>
+
+            <!-- Right header box -->
+            {#                    <div class="col-6 text-right">               #}
+            {#                        <p class="header-social-icons social-icons">#}
+            {#                            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>#}
+            {#                            <a href="#"><i class="fa fa-twitter fa-2x"></i></a>#}
+            {#                            <a href="#"><i class="fa fa-youtube fa-2x"></i></a>#}
+            {#                            <a href="#"><i class="fa fa-instagram fa-2x"></i></a>#}
+            {#                        </p>#}
+            {#                    </div>#}
+        </div>
+    </div>
+</div>
+
+
+<!-- Main navigation -->
+<div class="container navbar-container">
+    <nav class="navbar navbar-expand-md navbar-light">
+
+        <!-- Company name shown on mobile -->
+        <a class="navbar-brand d-md-none d-lg-none d-xl-none" href="#"><span>website</span>name</a>
+
+        <!-- Mobile menu toggle -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Main navigation items -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">首页 <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'uni_list' %}">大学库</a>
+                </li>
+
+                {#                        <li class="nav-item dropdown">#}
+                {#                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Examples &amp; Pages</a>#}
+                {#                                    <div class="dropdown-menu navbar-dark bg-primary">#}
+                {#                                          <a class="dropdown-item" href="examples.html">Style Examples</a>#}
+                {#                                          <a class="dropdown-item" href="three-column.html">Three Column</a>#}
+                {#                                          <a class="dropdown-item" href="one-column.html">One column / no sidebar</a>#}
+                {#                                          <a class="dropdown-item"  href="text.html">Text / left sidebar</a>#}
+                {#                                    </div>#}
+                {#                        </li>#}
+
+
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">大学库</a>#}
+{#                </li>#}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">联系我们</a>
+                </li>
+            </ul>
+
+            <form class="form-inline header-search-form my-2 my-lg-0" method="get" action="{% url 'uni_list' %}">
+                <input class="form-control mr-sm-2" type="text" name="key" size="10" placeholder="Search" aria-label="Search">
+                <button class="btn my-2 my-sm-0 btn-primary" type="submit">搜索</button>
+            </form>
+
+        </div>
+    </nav>
+</div>
+
+<!-- Jumbtron / Slider -->
+<div class="jumbotron-wrap">
+    <div class="container">
+        <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="jumbotron">
+                        <h1 class="text-center">查查你的大学</h1>
+                        <p class="lead text-center">查看该大学首页</p>
+                        <p class="lead text-center">
+                            <a class="btn btn-primary btn-lg" href="#" role="button"><i class="fa fa-info"></i> &nbsp查看更多</a>
+                            {#                                    <a class="btn btn-secondary btn-lg" href="#" role="button"><i class="fa fa-gbp"></i> &nbsp; Buy now</a>#}
+                        </p>
+                    </div>
+
+                </div>
+
+                {#                        <div class="carousel-item">#}
+                {#                            <div class="jumbotron">#}
+                {#                                <h1 class="text-center">Cras sit amet nibh libero, in gravida nulla</h1>#}
+                {#                                <p class="lead text-center">Nulla vel metus scelerisque ante sollicitudin. Cras purus odio.</p>#}
+                {#                                <p class="lead text-center">#}
+                {#                                        <a class="btn btn-outline-primary btn-lg" href="#" role="button"><i class="fa fa-info"></i> &nbsp; Learn more</a>#}
+                {#                                    <a class="btn btn-outline-secondary btn-lg" href="#" role="button"><i class="fa fa-gbp"></i> &nbsp; Buy now</a>#}
+                {#                                </p>#}
+                {#                            </div>#}
+                {##}
+                {#                        </div>#}
+            </div>
+
+            <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Main content area -->
+<main class="container">
+    <div class="row">
+
+        <!-- Main content -->
+        <div class="col-md-8">
+            {% for university in universitys %}
+                <article>
+                    <h2 class="article-title" style="display: inline"><a href="{% url "uni_detail" university.name %}">
+                            {{ university.name | default:"" }}</a></h2>
+                    {% if university.tese %}
+                        <span class="badge badge-light">{{ university.tese }}</span>
+                    {% endif %}
+
+                    <p></p>
+                    <span class="badge badge-info">{{ university.xingzhi | default:"" }}</span>
+                    <span class="badge badge-info">{{ university.addr | default:"" }}</span>
+                    <span class="badge badge-info">{{ university.leixing | default:"" }}</span>
+                    <span class="badge badge-info">{{ university.lishu | default:"" }}</span>
+                    <p class="article-meta">更新于{{ university.updated | date:'Y-m-d' }}</p>
+
+                    <p>{{ university.bi | default:""| safe | truncatechars:"300" }}...</p>
+
+
+{#                    <a href="#" class="btn btn-secondary">更多</a>#}
+                    {#                        <a href="#" class="btn btn-secondsary">Comments</a>#}
+
+                </article>
+            {% endfor %}
+
+
+
+
+            <!-- Example pagination Bootstrap component -->
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    {% if universitys.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ universitys.previous_page_number }}">{{ universitys.previous_page_number }}</a></li>
+                    {% endif %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ universitys.number }}">{{ universitys.number }}</a></li>
+                    {% if universitys.has_next %}
+                        <li class="page-item"><a class="page-link"href="?page={{ universitys.next_page_number }}">{{ universitys.next_page_number }}</a></li>
+                    {% endif %}
+
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!-- Sidebar -->
+        <aside class="col-md-4">
+            <div class="sidebar-box">
+                <h4>Categories</h4>
+                <div class="list-group list-group-root">
+                    <a class="list-group-item active" href="index.html">Home Page</a>
+                    <a class="list-group-item" href="examples.html">Style Examples</a>
+                    <div class="list-group">
+                        <a class="list-group-item" href="three-column.html">Three Column</a>
+                        <a class="list-group-item" href="one-column.html">One column / no sidebar</a>
+                        <a class="list-group-item" href="text.html">Text / left sidebar</a>
+                    </div>
+                    <a class="list-group-item" href="three-column.html">Three column layout example</a>
+                    <a class="list-group-item" href="#">Sed aliquam libero ut velit bibendum</a>
+                    <a class="list-group-item" href="#">Maecenas condimentum velit vitae</a>
+                </div>
+            </div>
+
+            <div class="sidebar-box sidebar-box-bg">
+                <h4>关于我们</h4>
+                <p>我们是个数据服务团队，将某些网络数据整合提供规模查询服务，如果对某些数据有需求请直接联系企鹅690898901. </p>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>Search site</h4>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="sidebar-box">
+                <h4>对外链接</h4>
+                <ul>
+                    <li><a href="#" title="premium templates">Premium HTML web templates from $10</a></li>
+                    <li><a href="#" title="web hosting">Cheap web hosting from Dreamhost</a></li>
+                    <li><a href="#" title="Tux Themes">Premium WordPress themes</a></li>
+                </ul>
+            </div>
+        </aside>
+
+
+    </div>
+</main>
+
+
+<!-- Footer -->
+<div class="container footer-container">
+    <footer class="footer">
+        <div class="footer-lists">
+            <div class="row">
+                <div class="col-sm">
+                    <ul>
+                        <li><h4>--</h4></li>
+                        <li><a href="#">淤泥解作白莲藕</a></li>
+                        <li><a href="#">粪壤能开黄玉花</a></li>
+                        <li><a href="#">可惜国香天不管</a></li>
+                        <li><a href="#">随缘流落小民家 </a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <ul>
+                        <li><h4>--</h4></li>
+                        <li><a href="#">白日何短短，百年苦易满。</a></li>
+                        <li><a href="#">苍穹浩茫茫，万劫太极长。</a></li>
+                        <li><a href="#">麻姑垂两鬓，一半已成霜。</a></li>
+                        <li><a href="#">天公见玉女，大笑亿千场。</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <ul>
+                        <li><h4>--</h4></li>
+                        <li><a href="#">吾欲揽六龙，回车挂扶桑。 </a></li>
+                        <li><a href="#">北斗酌美酒，劝龙各一觞。</a></li>
+                        <li><a href="#">富贵非所愿，与人驻颜光。</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <h4>freedom</h4>
+                    <p> 要自由的人，其实要担最大的责任，选别人少走的路的人，背负最沉重的枷锁。从来就没有不需要抵抗重力的飞翔。.</p>
+
+{#                    <p class="social-icons">#}
+{#                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>#}
+{#                        <a href="#"><i class="fa fa-twitter fa-2x"></i></a>#}
+{#                        <a href="#"><i class="fa fa-youtube fa-2x"></i></a>#}
+{#                        <a href="#"><i class="fa fa-instagram fa-2x"></i></a>#}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="text-center"><a href="#">Back to top</a></p>
+        </div>
+    </footer>
+</div>
+
+
+<!-- Bootcamp JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</body>
+</html>
