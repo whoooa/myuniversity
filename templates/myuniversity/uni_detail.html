@@ -1,7 +1,12 @@
 {% load static  xytags %}
 <!doctype html>
 <html lang="en">
-<script>
+
+
+<head>
+    <title>学校详情|{{ university.name }}</title>
+
+    <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -10,10 +15,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-
-<head>
-    <title>学校详情|{{ university.name }}</title>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="大学网,{{ university.name }}, 大学信息，学校， 官网链接">
